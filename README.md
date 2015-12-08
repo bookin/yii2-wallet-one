@@ -1,7 +1,7 @@
 Yii2 component for [WalletOne](https://www.walletone.com/)
 ============================
 
-![Total Downloads](https://poser.pugx.org/bookin/yii2-wallet-one/downloads)](https://packagist.org/packages/bookin/yii2-wallet-one)
+[![Total Downloads](https://poser.pugx.org/bookin/yii2-wallet-one/downloads)](https://packagist.org/packages/bookin/yii2-wallet-one)
 [![Latest Unstable Version](https://poser.pugx.org/bookin/yii2-wallet-one/v/unstable)](https://packagist.org/packages/bookin/yii2-wallet-one)
 [![License](https://poser.pugx.org/bookin/yii2-wallet-one/license)](https://packagist.org/packages/bookin/yii2-wallet-one)
 
