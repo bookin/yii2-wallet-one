@@ -1,0 +1,13 @@
+{
+    "name": "bookin/yii2-wallet-one",
+    "description": "Component for WalletOne service",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Anton",
+            "email": "issues.bookin@gmail.com"
+        }
+    ],
+    "require": {}
+}
