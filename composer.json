@@ -9,5 +9,13 @@
             "email": "issues.bookin@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "bookin\\walletone\\": ""
+        }
+    }
 }
