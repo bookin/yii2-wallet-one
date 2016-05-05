@@ -33,9 +33,10 @@ to the ```require``` section of your `composer.json` file.
     'class'=>'bookin\walletone\WalletOne',
     'secretKey'=>'....',
     'signatureMethod'=>'sha1',
+    'buttonLabel'=>'....',
     'walletOptions'=>[
-        'WMI_MERCHANT_ID'=>...,
-        'WMI_CURRENCY_ID'=>...,
+        'WMI_MERCHANT_ID'=>'...',
+        'WMI_CURRENCY_ID'=>'...',
         'WMI_SUCCESS_URL'=>['site/payment-success'],
         'WMI_FAIL_URL'=>['site/payment-fail'],
     ]
@@ -47,6 +48,8 @@ to the ```require``` section of your `composer.json` file.
 ```walletOptions``` - it [parameters](https://www.walletone.com/merchant/documentation/#step2) for generating a payment form, you can set permanent data
 
 ```signatureMethod``` - EDS creation method, this parameter must be the same as your selected method on the setting integration page your account (default - sha1)
+
+```buttonLabel``` - label for WalletOneButton
 
 If you don't use encryption method, you need set ```signatureMethod``` and ```secretKey``` to NULL
 
