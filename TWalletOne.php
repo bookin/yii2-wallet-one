@@ -16,6 +16,7 @@ trait TWalletOne
 {
     public $apiUrl = 'https://wl.walletone.com/checkout/checkout/Index';
     public $secretKey = '';
+    public $buttonLabel = '';
     public $walletOptions = [];
 
     /**

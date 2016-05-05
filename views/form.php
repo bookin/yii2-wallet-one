@@ -9,5 +9,5 @@ echo Html::beginForm($this->context->apiUrl);
     foreach($formData as $key => $value){
         echo Html::hiddenInput($key, $value);
     }
-    echo Html::submitButton('Pay', $this->context->buttonOptions);
+    echo Html::submitButton($this->context->lable, $this->context->buttonOptions);
 echo Html::endForm();

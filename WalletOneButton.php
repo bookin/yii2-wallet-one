@@ -16,6 +16,11 @@ class WalletOneButton extends Widget
     use TWalletOne;
 
     /**
+     * @var string
+     */
+    public $label;
+
+    /**
      * @var array
      */
     public $buttonOptions = ['class'=>'btn btn-info'];
@@ -42,11 +47,19 @@ class WalletOneButton extends Widget
                 if(!$this->signatureMethod && $component->signatureMethod){
                     $this->signatureMethod = $component->signatureMethod;
                 }
+
+                if($component->buttonLabel){
+                    $this->label = $component->buttonLabell;
+                }
             }
         }catch (Exception $c){}
 
         if(!$this->signatureMethod){
             $this->signatureMethod = WalletOne::SIGNATURE_SHA1;
+        }
+
+        if(!$this->label){
+            $this->label = 'WalletOne Play';
         }
     }
 
