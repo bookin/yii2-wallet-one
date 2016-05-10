@@ -96,10 +96,7 @@ $walletone = Yii::$app->walletone;
 
 try{
     if($walletone->checkPayment($post)){
-        $user_id = explode('-',$post)[1];
-        $user = User::find()->where(['_id'=>$user_id])->one();
-        $user->balance = (float)$post['WMI_PAYMENT_AMOUNT'];
-        $user->save();
+        //... save info about payment
     }
 }catch (ErrorException $c){
     return 'WMI_RESULT=RETRY&WMI_DESCRIPTION='.$c->getMessage();
