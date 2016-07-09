@@ -40,16 +40,17 @@ class WalletOneButton extends Widget
                 if($component->walletOptions){
                     $this->walletOptions = self::array_merge_recursive_distinct($component->walletOptions, $this->walletOptions);
                 }
+                
+                if($component->buttonLabel){
+                    $this->label = $component->buttonLabel;
+                }
+
                 if($component->buttonOptions){
                     $this->buttonOptions = self::array_merge_recursive_distinct($component->buttonOptions, $this->buttonOptions);
                 }
 
                 if(!$this->signatureMethod && $component->signatureMethod){
                     $this->signatureMethod = $component->signatureMethod;
-                }
-
-                if($component->buttonLabel){
-                    $this->label = $component->buttonLabell;
                 }
             }
         }catch (Exception $c){}
