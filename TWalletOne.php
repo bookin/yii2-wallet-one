@@ -80,7 +80,7 @@ trait TWalletOne
             $fields['WMI_FAIL_URL'] = Url::toRoute($fields['WMI_FAIL_URL'], true);
         }
 
-        $formData['WMI_PAYMENT_AMOUNT'] = number_format($fields['WMI_PAYMENT_AMOUNT'], 2, '.', ',');
+        $fields['WMI_PAYMENT_AMOUNT'] = number_format($fields['WMI_PAYMENT_AMOUNT'], 2, '.', '');
 
         if(isset($this->secretKey) && isset($this->signatureMethod)){
             $signature = self::getSignature($this->secretKey, $fields, $this->signatureMethod);
@@ -121,7 +121,7 @@ trait TWalletOne
         $signature = '';
 
         if ($signatureMethod == 'md5') {
-            $signature = base64_encode(pack("H*", sha1($fieldValues . $secretKey)));
+            $signature = base64_encode(pack("H*", md5($fieldValues . $secretKey)));
         }
         if ($signatureMethod == 'sha1') {
             $signature = base64_encode(pack("H*", sha1($fieldValues . $secretKey)));
