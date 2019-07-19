@@ -94,9 +94,10 @@ trait TWalletOne
      * @param $secretKey
      * @param array $data
      * @param string $signatureMethod
+     * @param bool $isNotification
      * @return string
      */
-    protected static function getSignature($secretKey, $data, $signatureMethod = 'sha1'){
+    protected static function getSignature($secretKey, $data, $signatureMethod = 'sha1', $isNotification = false){
         unset($data['WMI_SIGNATURE']);
 
         foreach ($data as $name => $val) {
@@ -110,11 +111,11 @@ trait TWalletOne
         foreach ($data as $value) {
             if (is_array($value)) {
                 foreach ($value as $v) {
-                    $v = iconv("utf-8", "windows-1251", $v);
+                    if (!$isNotification) $v = iconv("utf-8", "windows-1251", $v);
                     $fieldValues .= urldecode($v);
                 }
             } else {
-                $value = iconv("utf-8", "windows-1251", $value);
+                if (!$isNotification) $value = iconv("utf-8", "windows-1251", $value);
                 $fieldValues .= urldecode($value);
             }
         }
@@ -148,7 +149,7 @@ trait TWalletOne
             if (!is_array($data) or !isset($data) or is_null($data)) {
                 return false;
             }
-            $signature = self::getSignature($secretKey, $data, $signatureMethod);
+            $signature = self::getSignature($secretKey, $data, $signatureMethod, $isNotification = true);
             if($signature == $data["WMI_SIGNATURE"]){
                 return true;
             }
