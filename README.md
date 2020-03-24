@@ -104,4 +104,7 @@ try{
 return 'WMI_RESULT=OK';
 ```
 
+### Problems
+
+If you enabled `enableCsrfValidation` for your application you should disable it manually (`Yii::app()->request->enableCsrfValidation = false;`) before initializing form to have the correct token.
 
